@@ -51,17 +51,19 @@ const updateProfile = async (userId, profileData, cvFile) => {
         if (!user)
             throw new ApiError(StatusCodes.NOT_FOUND, 'User not found')
     
-        const fileExtension = validateFile(cvFile)
+        
 
         let updatedUser = {}
         if (cvFile)
         {
+            const fileExtension = validateFile(cvFile)
             const uploadResult = await cloudinaryProvider.streamUpLoadForCV(cvFile.buffer, 'cv', fileExtension)
             updatedUser = await userModel.update(userId, {
                 cvLink: uploadResult.secure_url
             })
         } 
         else {
+
             updatedUser = await userModel.update(userId, profileData)
 
         }

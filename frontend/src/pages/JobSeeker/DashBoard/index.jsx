@@ -67,7 +67,7 @@ const Dashboard = () => {
 
   if(!activities || !userData)
     return <PageLoading caption={"Loading..."}/>
-    console.log("hehehehhee",  userData)
+    
 
   return (
     <>

@@ -9,11 +9,12 @@ import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import Paper from '@mui/material/Paper'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCurrentEmployer } from '~/redux/employer/employerSlice'
+import { selectCurrentUser } from '~/redux/user/userSlice'
 
 function TopAppBar() {
   
-  // const currentEmployer = useSelector(selectCurrentEmployer)
+  const user = useSelector(selectCurrentUser)
+  console.log("user", user)
 
   return (
     <AppBar
@@ -57,11 +58,11 @@ function TopAppBar() {
             }}
           >
             <Avatar
-              // src={currentEmployer.logoURL}
+              src={user?.picture}
               sx={{ width: 24, height: 24, mr: 1, my:0.2 }}
             />
             <Typography variant="body2" fontWeight="medium">
-              hehe
+              {user?.name || 'Chào mừng bạn'}
             </Typography>
           </Paper>
         </Stack>

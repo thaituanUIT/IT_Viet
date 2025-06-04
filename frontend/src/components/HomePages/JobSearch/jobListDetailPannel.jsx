@@ -14,6 +14,9 @@ import {
   IconButton,
   CircularProgress,
 } from "@mui/material"
+import { sanitizeHTML } from "~/utils/formatter";
+import { formatText } from "~/utils/formatter";
+
 import {
   LocationOn as LocationOnIcon,
   AttachMoney as MoneyIcon,
@@ -170,9 +173,9 @@ const JobDetailPanel = ({ job: initialJob }) => {
                   Địa điểm
                 </Typography>
               </Box>
-              <Typography variant="body1">{job.location || "Remote"}</Typography>
+              <Typography variant="body1">{formatText(job.location) || "Remote"}</Typography>
               <Typography variant="body2" color="text.secondary">
-                {job.workplace}
+                {formatText(job.workplace)}
               </Typography>
             </CardContent>
           </Card>
@@ -185,9 +188,12 @@ const JobDetailPanel = ({ job: initialJob }) => {
               <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
                 Job description
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
-                {job.jobDescription}
-              </Typography>
+              <Typography
+                             variant="body2"
+                             mt={1}
+                             sx={{ whiteSpace: "pre-line" }}
+                             dangerouslySetInnerHTML={{ __html: sanitizeHTML(job.jobDescription) }}
+                             />
             </CardContent>
           </Card>
         )}
@@ -199,9 +205,12 @@ const JobDetailPanel = ({ job: initialJob }) => {
               <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
                 Your skills and experience
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
-                {job.jobRequirement}
-              </Typography>
+              <Typography
+                             variant="body2"
+                             mt={1}
+                             sx={{ whiteSpace: "pre-line" }}
+                             dangerouslySetInnerHTML={{ __html: sanitizeHTML(job.jobRequirement) }}
+                             />
             </CardContent>
           </Card>
         )}
@@ -241,9 +250,12 @@ const JobDetailPanel = ({ job: initialJob }) => {
               <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
                 Why you'll love working here
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
-                {job.benefits}
-              </Typography>
+              <Typography
+                             variant="body2"
+                             mt={1}
+                             sx={{ whiteSpace: "pre-line" }}
+                             dangerouslySetInnerHTML={{ __html: sanitizeHTML(job.benefits) }}
+                             />
             </CardContent>
           </Card>
         )}

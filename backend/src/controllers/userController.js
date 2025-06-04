@@ -51,6 +51,7 @@ const updateProfile = async (req, res, next) => {
 }
 
 const addEducation = async (req, res, next) => {
+    console.log('Adding education...') // Debugging line
     try {
         const { userId } = req.params
         const educationData = req.body

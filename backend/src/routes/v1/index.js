@@ -5,7 +5,7 @@ import { jobRoute } from './jobRoute'
 import { applyRoute } from './appliesRoute'
 import { StatusCodes } from 'http-status-codes'
 import { testRoutes } from './testRoutes'
-import { interviewManagementRoute } from './interviewManagementRoute.js'
+import { interviewManagementRoute } from './interviewManagementRoute.js.js'
 
 const Router = express.Router()
 

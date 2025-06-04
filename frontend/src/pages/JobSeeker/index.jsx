@@ -36,7 +36,6 @@ const SECTIONS = {
   PROFILE: 'profile',
   MY_JOBS: 'myJobs',
   JOB_INVITATION: 'jobInvite',
-  SETTING: 'setting',
   LOGOUT : 'logout'
 }
 
@@ -67,11 +66,7 @@ export const mainMenus = [
     icon: <MarkEmailUnreadOutlinedIcon fontSize="small" />
   },
   
-  {
-    key: SECTIONS.SETTING,
-    label: 'Cài đặt',
-    icon: <SettingsOutlinedIcon fontSize="small" />
-  },
+
   {
     key: SECTIONS.LOGOUT,
     label: 'Đăng xuất',
@@ -150,9 +145,9 @@ const JobSeeker = () => {
           }}
 >
   <Stack direction="column" spacing={1} sx={{ fontSize: 11, px: 1 }}>
-    <Stack direction="row" alignItems="center" spacing={1} pt={2}>
+    <Stack direction="row" alignItems="center" spacing={1} pt={2} onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
       <SvgIcon sx={{ fontSize: 100 }} component={Logo} inheritViewBox />
-      <Typography variant="h6" fontWeight="bold" color="primary">
+      <Typography variant="h6" fontWeight="bold" color="primary" >
         IT_Jobs
       </Typography>
     </Stack>
@@ -182,7 +177,6 @@ const JobSeeker = () => {
             {selectedSection === SECTIONS.CV && <ManageCV/>}
             {selectedSection === SECTIONS.JOB_INVITATION && <JobsInvitation/>}
             {selectedSection === SECTIONS.PROFILE && <ITJobsProfileSection/>}
-            {selectedSection === SECTIONS.SETTING && <h2>Cài đặt</h2>}
 
           </Box>
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Box, Grid, Container } from "@mui/material";
 import JobSearchBar from "./index";
-import JobListSidebar from "./jobListSidebar.jsx";
+import JobListSidebar from "./jobListSidebar.jsx.jsx";
 import JobDetailPanel from "./jobListDetailPannel";
 
 export default function FindJobPage() {

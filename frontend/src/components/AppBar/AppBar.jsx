@@ -45,7 +45,7 @@ function AppBar() {
     >
       {/* Left Section */}
       <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 0.1, textDecoration: 'none' }} >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.1, textDecoration: 'none', cursor: 'pointer' }} >
           <SvgIcon
             sx={{ color: "text.primary", fontSize: 90,  }}
             component={Logo}

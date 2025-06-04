@@ -16,9 +16,7 @@ Router.route('/dashboard-overview')
 Router.route('/saved-jobs')
     .get(userController.getSavedJobsDetail)
 
-Router.route('/:userId')
-    .get(userController.getUserById)
-    .post(uploadMiddleware.upload.single('cv'), userController.updateProfile)
+
 
 
 Router.route('/email/:email')
@@ -48,6 +46,8 @@ Router.route('/:userId/certificates/:certificateId')
     .post(userController.updateCertificate)
     .delete(userController.deleteCertificate)
 
-
+Router.route('/:userId')
+    .get(userController.getUserById)
+    .post(uploadMiddleware.upload.single('cv'), userController.updateProfile)
 
 export const userRoutes = Router
